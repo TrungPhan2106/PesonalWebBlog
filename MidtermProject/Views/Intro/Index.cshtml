@@ -1,0 +1,68 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@* @{
+    var txt = "";
+
+    if (DateTime.Now.Hour > 12)
+    { txt = "Chào buổi chiếu"; }
+    else
+    { txt = "Chào buổi sáng"; }
+    <p>@txt</p>
+} *@
+<html>
+<body>
+    <table>
+        <tr style="font-weight:700">
+            <th width="100px">Day</th>
+            <th width="100px">Hour</th>
+            <th width="100px">Minute</th>
+            <th width="100px">Second</th>
+        </tr>
+        <tr>
+            <td>@DateTime.Now.Day</td>
+            <td>@DateTime.Now.Hour</td>
+            <td>@DateTime.Now.Minute</td>
+            <td>@DateTime.Now.Second</td>
+        </tr>
+    </table>
+    <p style="text-align:center; font-weight:700; font-size:50px">Introduction</p>
+    <div class="row">
+        <div class="col-md-3" style="background-color:black">
+            <div>
+                <img src="~/img/Avatar.jpg" alt="Avatar" class="h-50" style="margin-left:auto; margin-right:auto; display:block" />
+            </div>
+            <div class="text-white">
+                <p>Name: Phan Đac Trung</p>
+                <p>Birth: 21-06-2003</p>
+                <p>Adress: Hoc Mon, Ho Chi Minh</p>
+                <p>Phone: 0866713411</p>
+                <p>Email: phantrung21062003@gmail.com</p>
+            </div>
+        </div>
+        <div class="col">
+            <h2>About Me</h2>
+            <p>My name is Trung and I'm Vietnamese. I'm a student at Saigon International University and I am studying computer science.</p>
+            <p>I'm interested in things like reading books, playing mobile games, watching movies and traveling with friends.  I'm a big fan of Harry Potter and I've read this book millions of times in English because I wanted to improve my English skills.</p>
+            <p> Actually, I have a passion for travel and photography.  So I wanted to pursue my dream and become a photographer.  I hope that I will be able to face these challenges, and that my dream will come true.</p>
+            <div class="row">
+                <div class="col">
+                    <h2>Skill</h2>
+                    <ul>Mos Word, Excel, PowerPoint</ul>
+                    <ul>C++, C# dev</ul>
+                    <ul>Python dev</ul>
+                </div>
+                <div class="col">
+                    <h2>Experience</h2>
+                    <ul>Project Gym Management by ASP.Net MVC</ul>
+                    <ul>Project AppDocTruyen (mobile application programming)</ul>
+                    <ul>Project Training Points Management</ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
