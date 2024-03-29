@@ -4,31 +4,8 @@
 @{
 }
 
-@* @{
-    var txt = "";
-
-    if (DateTime.Now.Hour > 12)
-    { txt = "Chào buổi chiếu"; }
-    else
-    { txt = "Chào buổi sáng"; }
-    <p>@txt</p>
-} *@
 <html>
 <body>
-    <table>
-        <tr style="font-weight:700">
-            <th width="100px">Day</th>
-            <th width="100px">Hour</th>
-            <th width="100px">Minute</th>
-            <th width="100px">Second</th>
-        </tr>
-        <tr>
-            <td>@DateTime.Now.Day</td>
-            <td>@DateTime.Now.Hour</td>
-            <td>@DateTime.Now.Minute</td>
-            <td>@DateTime.Now.Second</td>
-        </tr>
-    </table>
     <p style="text-align:center; font-weight:700; font-size:50px">Introduction</p>
     <div class="row">
         <div class="col-md-3" style="background-color:black">

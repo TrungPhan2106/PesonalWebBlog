@@ -3,11 +3,31 @@
 @{
     ViewData["Title"] = "Index";
 }
+@{
+    var txt = "";
 
-<h1>Blog của tôi</h1>
-
+    if (DateTime.Now.Hour > 12)
+    { txt = "Good afternoon"; }
+    else
+    { txt = "Good Morning"; }
+}
+<h1 class="text-center">@txt, Myself</h1>
+<table >
+    <tr style="font-weight:700">
+        <th width="100px">Day</th>
+        <th width="100px">Hour</th>
+        <th width="100px">Minute</th>
+        <th width="100px">Second</th>
+    </tr>
+    <tr>
+        <td>@DateTime.Now.Day</td>
+        <td>@DateTime.Now.Hour</td>
+        <td>@DateTime.Now.Minute</td>
+        <td>@DateTime.Now.Second</td>
+    </tr>
+</table>
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Create</a>
 </p>
 <table class="table">
     <thead>
