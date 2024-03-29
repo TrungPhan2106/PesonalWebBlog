@@ -13,6 +13,6 @@ namespace MidtermProject.Models
         [Required]
         public string TenTheLoai { get; set; }
 
-        public List<Blog> Blogs { get; set; }
+        public List<Blog>? Blogs { get; set; }
     }
 }
