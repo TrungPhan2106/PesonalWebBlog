@@ -55,5 +55,45 @@ namespace MidtermProject.Areas.Admin.Controllers
             }
             return RedirectToAction("Index");
         }
+
+        public IActionResult Details(int id)
+        {
+            Blog = dBContext.Blogs.Include(u => u.Category).FirstOrDefault(blog => blog.Id == id);
+            if(Blog != null)
+            {
+                return View(Blog);
+            }
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Edit(int id)
+        {
+            List<Category> categories = dBContext.Categories.ToList();
+            ViewBag.Categories = categories;
+
+            Blog = dBContext.Blogs.FirstOrDefault(blog => blog.Id == id);
+            if (Blog != null)
+            {
+                return View(Blog);
+            }
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Index", "Blog");
+            }
+            if(ModelState.IsValid)
+            {
+                Blog.Category = dBContext.Categories.FirstOrDefault(cate => cate.Id == Blog.CateId);
+                dBContext.Update(Blog);
+                dBContext.SaveChanges();
+            }
+            return RedirectToAction("Index", "Blog");
+        }
     }
 }

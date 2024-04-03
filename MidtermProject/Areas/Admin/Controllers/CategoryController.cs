@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MidtermProject.Models;
 
 namespace MidtermProject.Areas.Admin.Controllers
@@ -48,6 +49,42 @@ namespace MidtermProject.Areas.Admin.Controllers
                 return RedirectToAction("Index");
             }
             return RedirectToAction("Index");
+        }
+
+        public IActionResult Details(int id)
+        {
+            Category = dBContext.Categories.FirstOrDefault(cate => cate.Id == id);
+            if (Category != null)
+            {
+                return View(Category);
+            }
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Edit(int id)
+        {
+            Category = dBContext.Categories.FirstOrDefault(cate => cate.Id == id);
+            if (Category != null)
+            {
+                return View(Category);
+            }
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Index", "Category");
+            }
+            if (ModelState.IsValid)
+            {
+                dBContext.Update(Category);
+                dBContext.SaveChanges();
+            }
+            return RedirectToAction("Index", "Category");
         }
     }
 }

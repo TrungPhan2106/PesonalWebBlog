@@ -22,4 +22,20 @@
     <Folder Include="Areas\Admin\Models\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\lib\ckeditor\adapters\jquery.js" />
+    <None Include="wwwroot\lib\ckeditor\adapters\jquery.min.js" />
+    <None Include="wwwroot\lib\ckeditor\ckeditor.js" />
+    <None Include="wwwroot\lib\ckeditor\ckeditor.min.js" />
+    <None Include="wwwroot\lib\ckeditor\config.js" />
+    <None Include="wwwroot\lib\ckeditor\config.min.js" />
+    <None Include="wwwroot\lib\ckeditor\lang\en.js" />
+    <None Include="wwwroot\lib\ckeditor\skins\kama\skin.js" />
+    <None Include="wwwroot\lib\ckeditor\skins\kama\skin.min.js" />
+    <None Include="wwwroot\lib\ckeditor\skins\moono\skin.js" />
+    <None Include="wwwroot\lib\ckeditor\skins\moono\skin.min.js" />
+    <None Include="wwwroot\lib\ckeditor\styles.js" />
+    <None Include="wwwroot\lib\ckeditor\styles.min.js" />
+  </ItemGroup>
+
 </Project>
