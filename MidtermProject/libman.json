@@ -4,7 +4,20 @@
   "libraries": [
     {
       "library": "ckeditor@4.21.0",
-      "destination": "wwwroot/lib/ckeditor/"
+      "destination": "wwwroot/lib/ckeditor/",
+      "files": [
+        "ckeditor.js",
+        "ckeditor.min.js",
+        "config.js",
+        "config.min.js",
+        "contents.css",
+        "contents.min.css",
+        "styles.js",
+        "styles.min.js",
+        "adapters/jquery.js",
+        "adapters/jquery.min.js",
+        "lang/en.js"
+      ]
     }
   ]
 }

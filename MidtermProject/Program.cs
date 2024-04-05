@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using MidtermProject.Models;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Identity;
 
 namespace MidtermProject
 {
@@ -16,8 +17,19 @@ namespace MidtermProject
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") + ";TrustServerCertificate=True"; 
             builder.Services.AddDbContext<BlogDBContext>(
                 option => option.UseSqlServer(connectionString));
+
+            builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
+            {
+                options.Password.RequiredLength = 4;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireDigit = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+            }).AddEntityFrameworkStores<BlogDBContext>().AddDefaultTokenProviders();
+
             var app = builder.Build();
 
+            
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
@@ -31,6 +43,7 @@ namespace MidtermProject
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(
